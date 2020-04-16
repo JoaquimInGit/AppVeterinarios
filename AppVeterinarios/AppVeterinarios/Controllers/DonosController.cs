@@ -12,7 +12,7 @@ namespace AppVeterinarios.Controllers
 {
     public class DonosController : Controller
     {
-        private readonly VetsDB db;
+        private readonly VetsDB db; //em SQL => use vetsDB
 
         public DonosController(VetsDB context)
         {
@@ -64,7 +64,7 @@ namespace AppVeterinarios.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Add(dono);
+                db.Add(dono); // insert into donos value(...)
                 await db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

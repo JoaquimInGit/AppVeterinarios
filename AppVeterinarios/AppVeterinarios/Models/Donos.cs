@@ -14,8 +14,14 @@ namespace AppVeterinarios.Models{
         [Key]
         public int ID { get; set; }
 
+        [Required(ErrorMessage ="O nome é de preenchimento obrigatório")]
+        [StringLength(40, ErrorMessage = "=O {0} não pode ter mais de {1} caracter")]
+        [RegularExpression("[A-Z,a-z]*",ErrorMessage = "Apenas são aceites letras")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "O {0} deve ter exatamente {1} caracteres.")]
+        [RegularExpression("[1356][0-9]{8}", ErrorMessage = "Só são aceites 9 algarismos, começando por 1,3,5 ou 6.")] //
         public string NIF { get; set; }
 
 
