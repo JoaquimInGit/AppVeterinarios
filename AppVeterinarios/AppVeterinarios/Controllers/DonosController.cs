@@ -79,12 +79,13 @@ namespace AppVeterinarios.Controllers
                 return NotFound();
             }
 
-            var donos = await db.Donos.FindAsync(id);
-            if (donos == null)
+            var dono = await db.Donos.FindAsync(id);
+
+            if (dono == null)
             {
                 return NotFound();
             }
-            return View(donos);
+            return View(dono);
         }
 
         // POST: Donos/Edit/5
