@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVeterinarios.Migrations
 {
     [DbContext(typeof(VetsDB))]
-    [Migration("20200501145735_addSeed")]
-    partial class addSeed
+    [Migration("20200501152711_CorrecaoDadosVeterinarios")]
+    partial class CorrecaoDadosVeterinarios
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -438,7 +438,9 @@ namespace AppVeterinarios.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NumCedulaProf")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(9)")
+                        .HasMaxLength(9);
 
                     b.HasKey("ID");
 
@@ -450,21 +452,21 @@ namespace AppVeterinarios.Migrations
                             ID = 1,
                             Fotografia = "Maria.jpg",
                             Nome = "Maria Pinto",
-                            NumCedulaProf = " vet-34589"
+                            NumCedulaProf = "vet-34589"
                         },
                         new
                         {
                             ID = 2,
                             Fotografia = "Ricardo.jpg",
                             Nome = "Ricardo Ribeiro",
-                            NumCedulaProf = " vet-34590"
+                            NumCedulaProf = "vet-34590"
                         },
                         new
                         {
                             ID = 3,
                             Fotografia = "Jose.jpg",
                             Nome = "José Soares",
-                            NumCedulaProf = " vet-56732"
+                            NumCedulaProf = "vet-56732"
                         });
                 });
 

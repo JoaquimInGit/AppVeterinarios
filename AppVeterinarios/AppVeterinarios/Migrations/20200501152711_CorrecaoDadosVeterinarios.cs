@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AppVeterinarios.Migrations
 {
-    public partial class addSeed : Migration
+    public partial class CorrecaoDadosVeterinarios : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,7 @@ namespace AppVeterinarios.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(nullable: true),
-                    NumCedulaProf = table.Column<string>(nullable: true),
+                    NumCedulaProf = table.Column<string>(maxLength: 9, nullable: false),
                     Fotografia = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -111,9 +111,9 @@ namespace AppVeterinarios.Migrations
                 columns: new[] { "ID", "Fotografia", "Nome", "NumCedulaProf" },
                 values: new object[,]
                 {
-                    { 1, "Maria.jpg", "Maria Pinto", " vet-34589" },
-                    { 2, "Ricardo.jpg", "Ricardo Ribeiro", " vet-34590" },
-                    { 3, "Jose.jpg", "José Soares", " vet-56732" }
+                    { 1, "Maria.jpg", "Maria Pinto", "vet-34589" },
+                    { 2, "Ricardo.jpg", "Ricardo Ribeiro", "vet-34590" },
+                    { 3, "Jose.jpg", "José Soares", "vet-56732" }
                 });
 
             migrationBuilder.InsertData(
