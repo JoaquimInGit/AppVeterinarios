@@ -24,6 +24,15 @@ namespace AppVeterinarios.Models{
             ErrorMessage = "Só são aceites letras.<br />A primeira letra é uma Maiúscula seguida de minúsculas.<br />Deve escrever 2 a 4 nomes.")]
         public string Nome { get; set; }
 
+
+        /// <summary>
+        /// Sexo do(a) Dono(a)
+        /// </summary>
+        [Required(ErrorMessage = "O {0} é se preencimento obrigatorio")]
+        [StringLength(1)]
+        [RegularExpression("[mfMF]")]
+        public string Sexo { get; set; }
+
         /// <summary>
         /// Numero de Identificação Fiscal, do Dono
         /// </summary>
@@ -31,6 +40,7 @@ namespace AppVeterinarios.Models{
         [StringLength(9, MinimumLength = 9, ErrorMessage = "O {0} deve ter exatamente {1} caracteres.")]
         [RegularExpression("[1356][0-9]{8}", ErrorMessage = "Só são aceites 9 algarismos, começando por 1,3,5 ou 6.")] //
         public string NIF { get; set; }
+
 
 
         //select * 

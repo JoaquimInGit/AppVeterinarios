@@ -60,7 +60,7 @@ namespace AppVeterinarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nome,NIF")] Donos dono)
+        public async Task<IActionResult> Create([Bind("ID,Nome,Sexo,NIF")] Donos dono)
         {
             if (ModelState.IsValid)
             {

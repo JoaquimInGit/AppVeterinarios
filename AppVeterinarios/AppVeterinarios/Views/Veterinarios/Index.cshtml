@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AppVeterinarios.Models.Donos>
+﻿@model IEnumerable<AppVeterinarios.Models.Veterinarios>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,7 +16,10 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NIF)
+                @Html.DisplayNameFor(model => model.NumCedulaProf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fotografia)
             </th>
             <th></th>
         </tr>
@@ -28,10 +31,10 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
+                @Html.DisplayFor(modelItem => item.NumCedulaProf)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NIF)
+                @Html.DisplayFor(modelItem => item.Fotografia)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
